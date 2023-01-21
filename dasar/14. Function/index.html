@@ -11,7 +11,9 @@
 <body>
 
     <script>
+        // function di js gak bisa overloading kah?
 
+        // 1. function biasa
         // sama lah kaya basprog yang lain
 
         function sayHello() {
@@ -21,6 +23,79 @@
         sayHello()
         sayHello()
         sayHello()
+
+        // 2. function parameter
+        // sama lah kaya basprog yang lain
+
+        function sayHello2(firstname) {
+            document.writeln(`<p>Hello ${firstname}</p>`)
+        }
+        sayHello2("Yazid")
+
+
+        // 3. function return value
+        // sama lah kaya basprog lain
+
+        function getFinalValue(value) {
+            if (value > 90) {
+                return "A";
+            } else if (value > 80) {
+                return "B";
+            } else if (value > 70) {
+                return "C";
+            } else if (value > 60) {
+                return "D"
+            } else {
+                return "E";
+            }
+        }
+
+        const finalValue = getFinalValue(76);
+        document.writeln(`<p>${finalValue}</p>`);
+
+        function isContains(array, searchValue) {
+            for (const element of array) {
+                console.info(`Iterasi Element ${element}`);
+                if (element === searchValue) {
+                    return true;
+                }
+            }
+            return false;
+        }
+
+        const array = [1, 32, 4324, 3, 43, 53, 53, 43, 43, 535, 35, 5];
+        const search = 43;
+        const found = isContains(array, search);
+        document.writeln(`<p>${found}</p>`);
+
+
+
+        // 4. optional parameter
+        // berbeda seperti basprog lain
+        // cuman yg membedakan, kalo di js, dia bakal otomatis ngasih value undefined
+        function sayHello3(firstName, middleName, lastName) {
+            document.writeln(`<p>${firstName} ${middleName} ${lastName}</p>`);
+        }
+
+        sayHello3();
+        sayHello3("yazid");
+        sayHello3("yazid", "asd")
+        sayHello3("yazid", "asd", "qwe")
+        sayHello3("yazid", "asd", "qwe", "Budi")
+
+        // 5. Default parameter
+        // sama lah kaya basprog yang lain
+
+        function register(name, gender = "UNKNOWN") {
+            document.writeln(`<p>${name} ${gender}</p>`);
+
+        }
+
+        register();
+        register("Eko");
+        register("Eko", "MALE");
+        register("Eko", undefined);
+        register("Eko", null);
     </script>
 
 </body>
