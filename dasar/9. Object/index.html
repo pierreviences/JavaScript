@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // object di js kurang lebih sama kaya dictionary di python
+        // index di object disebut atribut/property
+
+        // deklarasi
+        const orang = {};
+
+        // menambah
+        orang["nama"] = "yazid"
+        orang["umur"] = 30
+
+        console.table(orang)
+
+        // assigment
+        // untuk atribut bisa pake " " atau tidak
+        // jika pake " " dia bisa di spasi tpi kalo gak pake, ya gak bisa
+        const orang2 = {
+            nama: "Yazid",
+            "alamat lenglap": "asdasdasdasd",
+            umur: 23
+        }
+
+        console.table(orang2)
+        // akses
+        // macem macem lah, tapi biasnaya kalo object ya gini : namaobject.namaproperty
+        console.log(`Nama : ${orang2.nama}`)
+        console.log(`Nama : ${orang2["nama"]}`)
+        console.log("Nama : " + orang2["nama"])
+    </script>
+
+</body>
+
+</html>
