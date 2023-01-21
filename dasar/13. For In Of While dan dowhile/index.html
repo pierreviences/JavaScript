@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // for
+        // init; kondisi; post
+        // tapi ketiga itu gak wajib diisi
+
+        let counter = 1
+        for (; counter <= 3;) {
+            document.writeln(`<p>Perulangan ke ${counter}</p>`)
+            counter++
+        }
+
+
+        for (let counter2 = 1; counter2 <= 3; counter2++) {
+            document.writeln(`<p>Perulangan ke ${counter2}</p>`)
+        }
+
+        // for in
+        // dia iterable
+        // sama kaya python wkwkw
+        // tapi bedanya dia ngambil index/propertynya
+        const person = {
+            firstname: "yazid",
+            lastname: "imani"
+        }
+
+        for (const property in person) {
+            document.writeln(`<p> Property ${property} : ${person[property]}`)
+        }
+
+        const names = ["asd", 'qwe']
+        for (const index in names) {
+            document.writeln(`<p> Index : ${index} , ${names[index]}</p>`)
+        }
+
+        // for of
+        // kurleb sama kaya for in
+        // bedanya dia ngambil valuenya, entah itu  array, string, dll
+        // NOTE : KALO OBJECT GAK BISA, KARENA BUKAN ITERABLE
+
+        const names2 = ["zmxc", 'qwe']
+        for (const name of names2) {
+            document.writeln(`<p> Name : ${name}</p>`)
+        }
+
+        const a = "asd qwe zxc"
+        for (const b of a) {
+            document.writeln(`<p>${b}</p>`)
+        }
+
+
+        // while loop
+        // sama lah kaya basprog lainnya
+
+        // do while loop
+        // sama juga lah
+    </script>
+
+</body>
+
+</html>
