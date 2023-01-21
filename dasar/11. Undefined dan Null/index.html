@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // undefined -> ketika membuat sebuah variabel dan belum didefiniskan datanya maka otomatis undefined
+
+        let name
+        if (name === undefined) {
+            alert("UNDeined")
+        } else {
+            alert("defined")
+        }
+
+        // begitupun dengan array dan objek, ketika ada index yang tidak ada maka index tersebut undefined
+        const names = ["easd", "asd"]
+        if (names[2] === undefined) {
+            alert("Hello word")
+        } else {
+            alert(`Helllo ${names[2]} `)
+        }
+
+        // null ->representasi data kosong
+        // berbeda dengan undefined,
+        // null -> variable sudah ditambahkan valuenya, hanya saja valuenya null dan sudah di definisikan
+
+        let firsname = null;
+        if (firsname === null) {
+            alert("Hello null")
+        }
+    </script>
+
+</body>
+
+</html>
