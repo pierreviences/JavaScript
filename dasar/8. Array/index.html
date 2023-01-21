@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // Array di js kurleb sama kaya di basprog lain
+        // OPERASINYA SAMA KAYA LIST DI PYTHON
+        // intinya array di js sama kaya python
+        // operasi di array
+        // array.push(value) -> menambah data ke array
+        // array.length -> dapeting panjang array
+        // array[index] -> dapat posisi index
+        // array[index] = value -> ubah data di posisi index
+        // delete array[index] -> hapus data di posisi index, namun index tidak bergeser
+
+        // deklarasi
+        let arrayKosong = []
+
+        // assigment
+        let arrayIsi = ["yazid", "asd"]
+        document.writeln(arrayIsi)
+        document.writeln("<br>")
+        console.log(arrayIsi)
+
+        const name = []
+        name.push("yazid")
+        name.push("aasd", "asdasd")
+        document.writeln(name)
+        console.log(name)
+
+
+        console.log("belum berubah")
+        console.log(name[0])
+        console.log(name[1])
+        console.log(name[2])
+        console.table(name)
+
+        name[0] = "budi"
+        name[0] = "uyuy"
+        console.log("sudah berubah")
+        console.log(name[0])
+        console.log(name[1])
+        console.log(name[2])
+        console.table(name)
+
+        console.log("ada yg dihapus")
+        delete name[1] // index ke 1 kehapus tapi index ke 2 tidak masuk ke index ke satu dia tetep ke dua
+        console.table(name)
+    </script>
+
+</body>
+
+</html>
