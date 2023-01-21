@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        ALERT
+        -> akan menampilkan sebuah pesan,serta akan menghentikan interaksi dengan halaman web hingga pengguna menutup pesan tersebut.
+
+        prompt() 
+        -> akan menampilkan sebuah pesan, sebuah kolom teks, dan tombol "OK" dan "Cancel". Method ini akan mengembalikan teks yang dimasukkan oleh pengguna ke dalam kolom teks, atau nilai null jika pengguna mengklik tombol "Cancel".
+        
+        confirm() 
+        -> akan menampilkan sebuah pesan dan tombol "OK" dan "Cancel". Method ini akan mengembalikan true jika pengguna mengklik tombol "OK" dan false jika pengguna mengklik tombol "Cancel".
+        */
+
+        alert("Hello World")
+
+        const name = prompt("Siapa Nama Anda?")
+        alert(`Hello ${name}`)
+
+        const masuk = confirm("Anda yakin mau masuk?")
+        if (masuk) {
+            const name = prompt("Siapa nama anda?")
+            alert(`Nama Anda ${name}`)
+        } else {
+            alert("Bye Bye")
+        }
+    </script>
+
+</body>
+
+</html>
