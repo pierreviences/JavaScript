@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        KONVERSI String dan Number
+        - parseInt(string) -> konversi string ke int (bulat)
+        - parseFloat(string) -> koneersi string ke pecahan
+        - Number(string) -> konversi string ke number (bulat dan pecahan)
+        - number.toString() -> konversi number ke string
+        - NaN -> menandakan dia bukan number
+        */
+
+        let string = "1"
+        let value = parseInt("1")
+        let value2 = 2
+        document.writeln(`STRING TO INT/NUMBER <br>`)
+        document.writeln(`Hasil yang belum di konversi : ${string + value2}<br>`)
+        document.writeln(`Hasil yang sudah di konversi : ${value + value2}<br>`)
+
+        let a = 1;
+        let b = 2;
+        const total = a.toString() + b.toString()
+        document.writeln(`<br>INT/NUMBER to string <br>`)
+        document.writeln(`Hasil yang belum di konversi : ${a + b}<br>`)
+        document.writeln(`Hasil yang sudah di konversi : ${total}<br>`)
+    </script>
+
+</body>
+
+</html>
