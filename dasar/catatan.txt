@@ -1,0 +1,25 @@
+NOTE :
+
+- Jika mau mengakses this (aga berhati hati menggunakan arrow) tapi masih ttp bisa
+
+* jika ada method yang parameternya 2 seperti ini, maka harus pake anonymous function, karena kalo pake arrow function dia gak bisa
+contoh : 
+btn.addEvenListener('click', function () {
+	this.lablabla
+}
+
+- kalo gini dia gak bisa
+btn.addEvenListener('click', () => {
+	this.lablabla
+}
+
+* namun jika methodnya gak ada parameter, dia pake arrow function
+contoh : 
+setTimeout(() => {
+	this.bablala
+}, 500)
+
+- kalo gini dia gak bisa
+setTimeout(function (){
+	this.bablala
+}, 500)
