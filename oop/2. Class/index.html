@@ -89,6 +89,7 @@
             person1.name = "Yazid"
             person1.sayHalo("Budi")
 
+            // child
             const orang1 = new Orang()
             orang1.name = "Budi"
             orang1.sayHalo("Yazid")
@@ -120,8 +121,29 @@
             const person1 = new Person("Yazid")
             person1.sayHalo("Budi")
 
+
+            // child
             const orang1 = new Orang("Budi", "Paryoto")
             orang1.sayHalo("Yazid")
+        }
+
+        {
+            // 6. Super Method
+            console.log("5.) Super Method")
+            class Hewan {
+                nama() {
+                    console.log(`ini Hewan`)
+                }
+            }
+            class Kucing extends Hewan {
+                nama() {
+                    super.nama()
+                    console.log(`ini kucing`)
+                }
+            }
+
+            const kucing = new Kucing()
+            kucing.nama()
         }
 
     </script>
