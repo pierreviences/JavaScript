@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            CLOSURE
+            -> sebuah function yang dikembalikan oleh function lain, yang memiliki akses ke function parent
+            -> sebuah function ketika memiliki akses ke parent scopenya, meskipun parent scopenya sudah selesai di eksekusi
+            -> kombinasi function dan bundel refrensi ke data di sekitarnya
+            -> emang agak bingung sih dan jarang dgunakan
+
+            kapan menggunakan closure?
+            - untuk membaut function factories -> sebuah fungsi digunakan untuk membuat dan mengembalikan sebuah fungsi lain.
+            - untuk membaut private method
+        */
+
+        // contoh 1 -> tanpa parameter
+        function parent() {
+            let nama = "Yazid"
+            function child() {
+                console.log(nama)
+            }
+            child()
+        }
+        parent()
+
+        // contoh 2 -> dengan parameter
+        // note : harus disimpan dulu kedalam variabel
+
+        function parent2() {
+            // biasa
+            /*
+            function child2(nama) {
+                console.log(nama)
+            }
+            return child2 // -> gak pake () untuk return
+            */
+
+            // arrow function
+            return (n) => {
+                console.log(n)
+            }
+        }
+
+        let cetak = parent2()
+        cetak("Muhamad")
+
+
+
+        // contoh 3 -> lebih kompleks
+        function ucapkanSalam(waktu) {
+            return function (nama) {
+                console.log(`Halo ${nama}, Selamat ${waktu}`)
+
+            }
+        }
+
+        let selamatPagi = ucapkanSalam("Pagi")
+        selamatPagi("Yazid")
+
+
+        // contoh 4 -> kompleks pertambahan
+        function tambah(value) {
+            function add(param) {
+                return value + param
+            }
+
+            return add
+        }
+        const addDua = tambah(2)
+        console.log(addDua(10))
+
+
+
+
+    </script>
+
+</body>
+
+</html>
