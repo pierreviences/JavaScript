@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // di dalem object ada function
+
+        // akses method di dalem object
+        function halo(name) {
+            alert(`Hello ${name}`)
+        }
+
+        const person = {
+            name: "Yazid",
+            sayHello: function (name) {
+                alert(`Hello ${name}`)
+            },
+            sayHalo: (name) => {
+                alert(`Hello ${name}`)
+            },
+            say: halo,
+        }
+
+        person.sayHello("Yazid")
+        person.sayHalo("imani")
+        person.say("xcv")
+
+
+        // menambah method kedalam object
+        const orang = {
+            name: "yazid",
+        }
+
+        orang.sayHello = function (name) {
+            alert(`Hello ${name}`)
+        }
+
+        orang.sayHello("xcvxcvasasd")
+    </script>
+</body>
+
+</html>
