@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        DESTRUCTURING
+        -> untuk membongkar value value di array atau object ke dalam variable variabel
+        */
+
+
+        // 1.) di Array
+        //cara biasa
+        console.log("1.) di array")
+        const name = ["asd", "zxc", "yazid"]
+        const firstname = name[0]
+        const middlename = name[1]
+        const lastname = name[2]
+        console.info(firstname)
+        console.info(middlename)
+        console.info(lastname)
+
+        // makai destructuring
+        // note : kalo pake spread operator (...) dia bakal bikin array lagi
+        const names = ["asd", "zxc", "qwe", "dgf", "yazid"]
+        const [firstname2, middlename2, lastname2, ...other] = names
+
+        console.info(firstname2)
+        console.info(middlename2)
+        console.info(lastname2)
+        console.log(other)
+
+
+
+
+        // 2.) di Object
+        // note : kalo pake spread operator (...) dia bakal bikin object lagi
+        console.log("2.) di object")
+        const person = {
+            firstname3: "Yazid",
+            lastname3: "muhamad",
+            address: {
+                street: "Jalan bellum ada",
+                city: "bogor",
+                country: "indonesia"
+            },
+            hobby: "Game",
+            channel: "pasdasdasd"
+        }
+
+        const { firstname3, lastname3, address, ...others } = person
+        console.log(firstname3)
+        console.log(lastname3)
+        console.log(address)
+        console.log(other)
+
+        // di object juga dia bisa nested object ( object dalam object)
+        // tapi yang address, udah gak bisa di askes
+        const { firstname4, lastname4, address: { city, street, country }, ...others2 } = person
+        console.log(city)
+        console.log(street)
+        console.log(country)
+
+
+        // 3.) di function parameter
+        console.log("3.) di function")
+        // bikin block biar ada variabel lagi {} -> gak juga gpp sih
+        {
+            // object
+            // cara 1 biasa
+            function cetak(person) {
+                console.log(person.firstname)
+                console.log(person.middlename)
+                console.log(person.lastname)
+            }
+            const person = {
+                firstname: "Yazid",
+                middlename: "zxxzc",
+                lastname: "muhamad",
+            }
+            cetak(person)
+
+            // cara 2 biasa
+            function cetak2(val) {
+                return person[val]
+            }
+            console.log(cetak2("firstname"))
+
+
+
+            // pake destructuring
+            function display({ firstname, middlename, lastname }) {
+                console.log(firstname)
+                console.log(middlename)
+                console.log(lastname)
+            }
+            const person2 = {
+                firstname: "Yazid",
+                middlename: "zxxzc",
+                lastname: "muhamad",
+            }
+            display(person2)
+
+
+            // array
+            // cara biasa
+            function sum(array) {
+                return array[0] + array[1]
+            }
+            console.log(sum([1, 2]))
+
+            // pake destructing
+            function sum([first, second]) {
+                return first + second
+            }
+            console.log(sum([1, 2]))
+
+
+
+        }
+
+
+
+        // 4.) Default value 
+        console.log("4.) Default Value")
+        // di array
+        const a = ["maka"]
+        const [b, awal = "asd", akhir = "zxc"] = a
+        console.log(b)
+        console.log(awal)
+        console.log(akhir)
+
+
+        // di object
+        const hewan = {
+            nama: "anjing",
+            umur: 12
+        }
+        let { nama, umur, jenis = "omnivora" } = hewan
+        console.log(nama)
+        console.log(umur)
+        console.log(jenis)
+
+        {
+            // 5.) Menggunakan nama variabel lain
+            console.log("5.) ubah variabel")
+            const hewan = {
+                nama: "anjing",
+                umur: 12
+            }
+            let { nama: name,
+                umur: tanggal,
+                jenis = "omnivora" } = hewan
+            console.log(name)
+            console.log(tanggal)
+            console.log(jenis)
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>
