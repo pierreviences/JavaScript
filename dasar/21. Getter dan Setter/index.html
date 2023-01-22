@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        GETTER
+        -> membuat function yg berbeda untuk mengambil data
+        */
+
+        const orang = {
+            firstname: "yazid",
+            lastname: "imani",
+            get fullName() {
+                return `${this.firstname} ${this.lastname}`
+            }
+        }
+        console.log(orang.fullName)
+
+        /*
+        SETTER
+        -> untuk mengubah data
+        */
+        const orang2 = {
+            firstname: "yazid",
+            lastname: "imani",
+            get fullName() {
+                return `${this.firstname} ${this.lastname}`
+            },
+
+            set fullname(nama) {
+                const list = nama.split(" ")
+                this.firstname = list[0]
+                this.lastname = list[1]
+            }
+        }
+        console.log(orang2.fullName = "Budi Wahyu")
+        orang2.fullName = "lolo popo"
+        console.log(orang2.fullName)
+    </script>
+
+</body>
+
+</html>
