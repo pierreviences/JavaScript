@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+         Arrow Function (=>)
+         -> alternatif pembuatan function sederhana
+         -> tidak bisa digunakan di semua situasi
+         -> kekurangan :
+            - tidak ada fitur argumentasi object
+            - tidak bisa menggunkana function generator
+            - gak bisa akses this
+            - gak bisa akses super
+        -> gak bisa berdiri sendiri 
+        -> harus dengan variabel/parameter
+        -> mirip mirip anonymous function lah
+        */
+
+
+        // 1. arrow function tidak mengembalikan nilai
+        // pakai block {}
+        const sayHello = (name) => {
+            document.writeln(`<p>Hello ${name}</p>`)
+        }
+        sayHello("asdasd")
+
+        const sayHell = () => {
+            document.writeln(`<p>Hello yazid</p>`)
+        }
+        sayHell("asdasd")
+
+        // tanpa block
+        const sayHello2 = (name) => document.writeln(`<p>Hello ${name}</p>`)
+        sayHello2("asdaqweqd")
+
+
+
+
+        // 2. Arrow function mengembalikan nilai
+        // note : - kalo pake block, gunakan return
+        //        - kalo gak pake block, ga usa pake return
+
+        const sum = (first, second) => first + second
+        document.writeln(`<p>Hasil :  ${sum(2, 5)}</p>`)
+
+        const sum2 = (first, second) => {
+            return first + second
+        }
+        document.writeln(`<p>Hasil :  ${sum2(2, 5)}</p>`)
+
+
+
+        // 3. Tanpa kurung di parameter
+        // hanya bisa kalo 1 parameter, kklo lebih dri itu gak bisa
+        const ayHello2 = name => document.writeln(`<p>Hello ${name}</p>`)
+        ayHello2("asdaqweqd")
+
+
+
+
+        // 4. Arrow function sebagai parameter
+        function giveMename(callback) {
+            callback("qweqw")
+        }
+
+        // versi anonymous
+        // giveMename(function (name) {
+        //   document.writeln(`<p>Hello ${name}</p>`)
+        // })
+
+        giveMename((name) => {
+            document.writeln(`<p>Hello ${name}</p>`)
+        })
+
+    </script>
+
+</body>
+
+</html>
