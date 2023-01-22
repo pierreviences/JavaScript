@@ -96,6 +96,75 @@
         register("Eko", "MALE");
         register("Eko", undefined);
         register("Eko", null);
+
+        // 6. Function sebagai Value
+        // -> masukin function kedalam variabel atau kedalm parameter fucntion lagi
+        function sayHalo(nama) {
+            document.writeln(`<p>Halo Nama saya ${nama}</p>`)
+
+        }
+
+        // langsung manggil
+        sayHalo("Halo")
+
+        // bikin variabel yang isinya function
+        const sayHaloYazid = sayHalo
+        sayHaloYazid("yazid")
+
+
+        // bikin function lagi tapi parameternya sebuah function
+        function giveName(callback) {
+            callback("yazid imani")
+        }
+
+        giveName(sayHalo)
+
+
+
+        // 7. Function Anonymous
+        // -> function gak memiliki nama
+        // gak bisa langsung bikin function
+        // harus dimasukin kedalam parameter atau variabel
+
+
+        // dalam variabel
+        let say = function (name) {
+            document.writeln(`<p>Halo Nama abdi ${name}</p>`)
+        }
+
+        say("Muhamad")
+
+        // dalam aprameter
+        function giveName2(callback) {
+            callback("Yazid")
+        }
+
+        // bisa gini
+        giveName2(say)
+
+        // atau bisa gini
+        giveName2(function (name) {
+            document.writeln(`<p>Halo Nama abdi ${name}</p>`)
+        })
+
+
+        // 8. Function dalam function
+        // hanya bisa akses function paling luar / parentnya
+        // gak bisa akses function yang ada di dalem function
+
+        // jika pingin akses functio yg ada di dalem, ya ngaksesnya didalem juga
+
+        function luar() {
+            function dalem() {
+
+            }
+
+            dalem()
+            dalem()
+        }
+
+        luar()
+
     </script>
 
 </body>
