@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /* 
+            Sama lah kaya basprog lain
+        */
+        class Person {
+            constructor(firstname, lastname) {
+                this.firstname = firstname
+                this.lastname = lastname
+            }
+            get fullname() {
+                console.log(`Halo  nama saya ${this.firstname} ${this.lastname}`)
+            }
+            set fullname(value) {
+                const ganti = value.split(" ")
+                this.firstname = ganti[0]
+                this.lastname = ganti[1]
+            }
+        }
+        const person1 = new Person("Yazid", "Imani")
+        // get
+        person1.fullname
+
+        // set
+        person1.fullname = "zxc asd"
+        person1.fullname
+
+    </script>
+
+</body>
+
+</html>
