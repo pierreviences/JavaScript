@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            yah sama lah kaya basprog lain
+            -> gak bisa bikin parameter di class
+        */
+
+        {
+            // 1.) cara bikin class
+            class Person {
+
+            }
+            const yazid = new Person()
+            console.log(yazid)
+        }
+
+        {
+            // 2.) Constructor Function di class
+            console.log("2.) Constructor")
+            class Person {
+                // mirip kaya function constructor
+                constructor(name) {
+                    console.log(`Membuat person ${name}`)
+                }
+            }
+            const yazid = new Person("yazid")
+
+        }
+
+        {
+            // 3.) Property dalam class
+            console.log("3.) Property")
+            class Person {
+                // mirip kaya function constructor
+                constructor(name) {
+                    this.name = name
+                }
+            }
+            const yazid = new Person("yazid")
+            console.log(yazid.name)
+
+
+
+        }
+
+        {
+            // 4.) Method di class
+            console.log("4.) Method")
+            class Person {
+                constructor(name) {
+                    this.name = name
+                }
+                sayHalo(name) {
+                    console.log(`Halo ${name}`)
+                }
+            }
+            const yazid = new Person("yazid")
+            yazid.sayHalo("Budi")
+        }
+
+        {
+            // 5. Inheritance di class
+            console.log("4.) Inheritance")
+            class Person {
+                sayHalo(name) {
+                    console.log(`Halo ${name} nama saya ${this.name}`)
+                }
+            }
+
+            class Orang extends Person {
+                //sayHalo(name) {
+                //    console.log(`Halo ${name} nama saya ${this.name}`)
+                //}
+            }
+
+            // parent
+            const person1 = new Person()
+            person1.name = "Yazid"
+            person1.sayHalo("Budi")
+
+            const orang1 = new Orang()
+            orang1.name = "Budi"
+            orang1.sayHalo("Yazid")
+        }
+
+        {
+            // 5. Super Constructor di class
+            console.log("4.) Super Constructor")
+            class Person {
+                constructor(firstname) {
+                    this.firstname = firstname
+                }
+                sayHalo(name) {
+                    console.log(`Halo ${name} nama saya ${this.firstname}`)
+                }
+            }
+
+            class Orang extends Person {
+                constructor(firstname, lastname) {
+                    super(firstname)
+                    this.lastname = lastname
+                }
+                sayHalo(name) {
+                    console.log(`Halo ${name} nama saya ${this.firstname} ${this.lastname}`)
+                }
+            }
+
+            // parent
+            const person1 = new Person("Yazid")
+            person1.sayHalo("Budi")
+
+            const orang1 = new Orang("Budi", "Paryoto")
+            orang1.sayHalo("Yazid")
+        }
+
+    </script>
+
+</body>
+
+</html>
