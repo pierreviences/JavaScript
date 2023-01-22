@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            FUNCTION GENERATOR
+            -> function untuk membuat data generator
+            -> generator adalah data yang bisa diiterasi seperti array
+            -> unutuk membuatnya, tambahin  * setelah function
+            -> contoh : function*
+            -> untuk mengembalikan data tiap iterasi, tambahin yield, diikuti datanya
+            -> yield data;
+            -> yield "asd";
+
+            note : hanya bisa diietarsi tiap item, jadi gak bisa dipnaggil index
+        */
+
+        function* createName() {
+            yield "Yazasd"
+            yield "zczx"
+        }
+        for (const name of createName()) {
+            document.writeln(`<p>${name}</p>`)
+        }
+
+        // generator kompleks
+        function* buatGanjil(value) {
+            for (let i = 1; i < value; i++) {
+                if (i % 2 === 1) {
+                    yield i
+                }
+            }
+        }
+
+        for (const number of buatGanjil(10)) {
+            document.writeln(`<p>${number}</p>`)
+        }
+    </script>
+</body>
+
+</html>
