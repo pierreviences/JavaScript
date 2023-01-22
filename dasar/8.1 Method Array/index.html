@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+
+    <script>
+        /* Method Pada Array */
+
+        console.log("1.) join - push - shift")
+        // 1. Join 
+        // -> menggambungkan semua array dan mengubahnya menjadi string
+
+        let arr = ['asd', 'qwe', 'zxc']
+        console.log(arr.join('-'))
+
+        // 2. push
+        // -> menambah atau mendorong elemn array di akhir array
+        arr.push('yazid')
+        console.log(arr)
+
+        // 3. pop
+        // menghilangkan elemen terkahir
+        // sama kaya python, tapi gak bisa pake index        arr.pop(2)
+        console.log(arr)
+
+        // 4. Unshift
+        // sama kaya push tapi dia diawal
+        arr.unshift('yazid')
+        console.log(arr)
+
+        // 5. shift
+        // menghilangkan elemen awal
+        arr.shift()
+        console.log(arr)
+
+
+        console.log("2.) slice dan splice")
+        let arr3 = ['asd', 'qwe', 'zxc']
+        // 6. splice
+        // -> menyisipkan sebuah elemen di tengah tengah
+        // cara penulisan : 
+        // splice(indexAawal, maudihapusberapa, elemenbaru1, elemnbaru2, ...)
+        arr3.splice(2, 2, "bayu")
+        console.log(arr3)
+
+
+        // 7. slice (mengiris)
+        // -> mengambil beberaepa bagian pada elemen, untuk menjadi array yang baru
+        // cara penulisan : 
+        // slice (awal, akhir)
+
+        // note : harus dimasukin var
+        let arr2 = arr3.slice(1, 3)
+        console.log(arr2)
+
+
+
+
+        console.log("3.) foreach ")
+        // 8. foreach
+        // kaya for tapi tidak mengembalikan nilai
+        let angka = [1, 2, 'asd', 3, 4, 5, 6]
+        let cetak = function (e) {
+            console.log(e)
+        }
+        angka.forEach(cetak)
+
+        let nama = ["asd", "23", 'zxc']
+        let cetak2 = function (e, index) {
+            console.log("Mahasiswa ke " + (index + 1) + " adalah : " + e)
+        }
+        nama.forEach(cetak2)
+
+
+        console.log("4.) map")
+        // 9. Map
+        // sama kaya foreach tapi lebih baik
+        // karna map bisa mengembalikan nilai array
+        // map = for yang mengembalikan nilai
+
+        let angka10 = [1, 2, 3, 4, 5, 6]
+        // pake anonymous function
+        const tak = angka10.map(function (e) {
+            return e * 2
+        })
+
+        // pake arrow function
+        const tak2 = angka10.map(e => {
+            return e * 2
+        })
+        console.log(tak)
+
+
+        console.log("5.) sort")
+        // 10. Sort
+        // -> mengurutkan isi array
+        let angka9 = [1, , 21, 12, 34, 51, 5, 4, 7, 9, 2, 3, 5, 1]
+
+        // kaya gini doang salah
+        angka9.sort()
+        console.log(angka9)
+        // harus kaya gini biar bener
+        angka9.sort(function (a, b) {
+            return a - b
+        })
+        console.log(angka9)
+
+
+        console.log("5.) Find dan Sort")
+        // 11. Find
+        // -> Menemukan 1 nilai
+        let angka7 = [1, , 21, 12, 34, 51, 5, 4, 7, 9, 2, 3, 5, 1]
+        let cari = angka7.find(x => {
+            return x > 5
+        })
+        console.log(cari)
+
+        // 12. Filter
+        // -> mencari banyak nilai
+        // jadi array
+
+        let cari2 = angka7.filter(x => {
+            return x > 5
+        })
+        console.log(cari2)
+    </script>
+</body>
+
+</html>
