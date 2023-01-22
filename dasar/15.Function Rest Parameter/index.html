@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+        REST PARAMETER
+        -> mengirim data sebanyak banyaknya pada satu parameter dan otomaatis menjadi array
+        -> hanya boleh ada satu di function, tidak boleh lebih dari satu
+        -> harus berada di posisi terakhir
+        -> mirip mirip *arg lah di python
+        
+        penulisan function namafunc(...parameter){}
+        */
+
+        function sum(name, ...data) {
+            let total = 0
+            for (const item of data) {
+                total += item;
+            }
+
+            document.writeln(`Total ${name} is ${total}`)
+        }
+
+        sum("Apple", 10, 20, 30, 40, 40, 40)
+        sum("banana", 10, 23, 23, 23, 20, 30, 40, 40, 40)
+        sum("Mango", 10, 32, 32, 32, 20, 30, 40, 40, 40)
+
+        /*
+        SPREAD SYNTAX
+        -> terlanjur sudah memiliki data array,
+        -> bisa mengirim array ke rest parameter
+        -> gunakan titik tiga kali, diikuti dengan array
+
+        */
+
+        function sum2(name, ...data) {
+            let total = 0
+            for (const item of data) {
+                total += item;
+            }
+
+            document.writeln(`<p>Total ${name} is ${total}</p>`)
+        }
+
+        const values = [10, 20, 30, 40, 50]
+        // contoh pemakaian
+        sum2("Test", ...values)
+
+        // kalo gak pake ... gak bakal bisa
+        sum("Gagal", values)
+
+
+        /*
+        Argumen Object
+        -> tidak disarankan menggunakan ini, lebih baik rest parameter saja
+        -> function tidak memiliki paramter
+        -> langsung akses saja nama variabel "arguments"
+        */
+
+        function sum3() {
+            let total = 0
+            for (const item of arguments) {
+                total += item;
+            }
+
+            document.writeln(`<p>Total is ${total}</p>`)
+        }
+
+        sum3(2, 3, 10, 23, 23, 2, 2)
+
+
+    </script>
+
+</body>
+
+</html>
