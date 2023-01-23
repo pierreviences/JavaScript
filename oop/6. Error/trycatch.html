@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            Try Catch /  Error Handling
+            -> menangkap eror
+            -> program tidak berhenti
+            -> pada lock try, akan mengakses program, jika eror, maka block try berhenti dan otomatis masuk ke block catch
+            -> jika tidak eror, block catch tidak di eksekusi 
+
+            * ada fitur baru namanya (finally)
+            -> finally ini optional
+            -> akan selalu diakses mau itu eror atau tidak
+        */
+
+        class Math {
+            static sum(...angka) {
+                if (angka.length === 0) {
+                    throw new Error("Total parameter harus lebih dari 0")
+                }
+
+                let total = 0
+                for (const number of angka) {
+                    total += number
+                }
+                return total
+            }
+        }
+
+        try {
+            console.log(Math.sum())
+            console.info("kode block try akan berhenti") // -> jadi yang ini gak akan diaskes, karena diatasnya sudah ada error
+        } catch (e) {
+            console.log("Terjadi error : " + e.message)
+        } finally {
+            console.log("Kode Program Selesai")
+        }
+
+        console.log("ini tetap jalan")
+
+    </script>
+
+</body>
+
+</html>
