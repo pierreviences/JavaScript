@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            /*
+                Public Class Field / Public Class Property
+                -> bikin nama field yang selevel dengan method
+                -> bisa di akses dimana aja
+            */
+
+            class Customer {
+                // public field
+                firstname;
+                lastname;
+                armor = 0;
+                constructor(firstname, lastname) {
+                    this.firstname = firstname
+                    this.lastname = lastname
+                }
+                sayHalo() {
+                    console.log("asd")
+                }
+            }
+
+            let objek1 = new Customer("Yaziid", "Imani")
+            objek1.firstname = "Budi"
+            console.info(objek1)
+        }
+
+        {
+            /*
+                Private Class Field (#)
+                -> hanya bisa di akses di dalam class aja
+            */
+
+            class Counter {
+                // private field
+                #counter = 0;
+
+                increment() {
+                    this.#counter++
+                }
+
+                decrement() {
+                    this.#counter--
+                }
+
+                cetak() {
+                    return this.#counter++
+                }
+            }
+            let objek1 = new Counter()
+            // objek1.counter = 100 -> kalo gini dia gak bisa
+            // objek1.#counter = 100 ->  gini juga dia gak bisa
+            objek1.increment()
+            objek1.increment()
+            objek1.increment()
+            objek1.increment()
+            console.info(objek1.cetak())
+        }
+
+        {
+            /*
+                 Private Method (#)
+            */
+            class Person {
+                sayHalo(name) {
+                    if (name) {
+                        this.#saywithname(name)
+                    } else {
+                        this.#saywithoutname()
+                    }
+                }
+
+                // private method
+                #saywithoutname() {
+                    console.log("Hello")
+                }
+                #saywithname(name) {
+                    console.log("Hello " + name)
+                }
+            }
+            let objek1 = new Person()
+            objek1.sayHalo("Yazid")
+            objek1.sayHalo()
+            // kalo gini gak bisa
+            // objek1.#saywithotname()
+
+        }
+
+    </script>
+
+</body>
+
+</html>
