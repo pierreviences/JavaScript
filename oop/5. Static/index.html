@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            /*
+                STATIC FIELD
+                -> mengakses tanpa membaut instance objek
+                -> intinya tidak lewat objek, melainkan lewat class nya
+                
+            */
+
+            class Person {
+                static name = "asdasd"
+                umur = 18
+            }
+
+            console.log(Person.name)
+            console.log(Person.umur) // -> undefined karna dia bukan static
+        }
+        {
+            /*
+            Static Method
+            */
+
+            class Math {
+                static sum(...angka) {
+                    let total = 0
+                    for (const number of angka) {
+                        total += number
+                    }
+                    return total
+                }
+            }
+            console.log(Math.sum(1, 2, 3, 4, 5))
+        }
+    </script>
+
+</body>
+
+</html>
