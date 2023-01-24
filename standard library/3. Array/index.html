@@ -146,6 +146,28 @@
             const total = angka.reduce((before, value) => before + value)
             console.log(total)
         }
+
+        {
+            console.log("7. Method Chaining")
+
+            /*
+                Method Chaining
+                ->Method chaining adalah teknik pengembangan di JavaScript yang memungkinkan Anda untuk menggabungkan beberapa metode pada objek dalam satu baris kode.
+
+            */
+
+            // gabungan filter, map, dan reduce
+
+            const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            // cari angka > 5
+            const hasil = angka.filter(x => x > 5) // 6,7,8,9,10
+                // kalikan dengan 2
+                .map(x => x * 2) // 12,14,16,18,20
+                // tambahkan semuanya
+                .reduce((x, y) => x + y) // 80
+
+            console.log(hasil)
+        }
     </script>
 
 </body>
