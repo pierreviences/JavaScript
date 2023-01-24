@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            /*
+                1.) Object Freeze & Seal
+
+                * Object.freeze()
+                -> mngubah object menjadi object yang tidak bisa diubah dan dihapus attributenya
+
+                * Object.seal()
+                -> menjadi object yang tidak bisa dihapus attributenya
+
+                note :keduanya tidak bisa hapus dan ditambah
+            */
+
+
+            console.log("1. Object Freeze & seal")
+            const orang = {
+                firstName: "Yazid",
+                lastname: "Imani"
+            }
+            const orang2 = {
+                firstName: "Yazid",
+                lastname: "Imani"
+            }
+
+            // freze
+            Object.freeze(orang)
+            orang.firstName = "zxczxc" // tidak berubah
+            delete orang.lastname // tidak berubah
+            console.log(orang)
+
+            // seal
+            Object.seal(orang2)
+            orang2.firstName = "Munier"
+            orang2.middleName = "zxczc" // tidak bisa, karena gak bisa nambah
+            delete orang.lastname // gak bisa
+
+            console.log(orang2)
+
+
+        }
+
+        {
+            /*
+                2.) Object Assign
+                -> menggambukan semua atribute dari sebuah object ke object lain
+                -> carnya : Object.assign(target, source)
+            */
+            console.log("2.) Object Assign")
+            const target = {
+                firstname: "yazid"
+            } // -> tujuan mau dikopi kemana si propertynya
+            const source = {
+                lastname: "imani"
+            } // -> sumber si object tempat kita mau copy si propertnya
+
+            Object.assign(target, source) //  artinya apa? artinbya atribut yang ada di source, dikopi kemudian dipindahkan ke target
+            console.log(target)
+            console.log(source)
+        }
+
+        {
+            /*
+                3.) Object Property Name & Value
+                -> mengambil semua property name dan value
+
+                * Object.values() -> mengambil semua property value
+                * Object.getPropertyNames() -> mengambil semua property name
+
+                note : returnnya array
+            */
+            console.log("2.) Property Name dan Value")
+            const orang = {
+                firstName: "Budi",
+                lastname: "Irawan"
+            }
+
+            console.log(Object.values(orang))
+            console.log(Object.getOwnPropertyNames(orang))
+
+        }
+    </script>
+
+</body>
+
+</html>
