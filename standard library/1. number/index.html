@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        /*
+            NUMBER
+            -> Function untuk melakukan konversi ke tipe data number
+            * jika data tida bisa di konversi ke number, secara otomatis hasilnya adalah NaN
+            
+        */
+        const input = "1235"
+        const number = Number(input)
+        console.log(typeof input)
+        console.log(typeof number)
+        console.log(number)
+        console.log(Number("asdasd"))
+
+        /*
+            NUMBER STAITC METHOD
+            -> ada banyak bisa di cek di documentary aja
+            -> Number.isNaN(value), ngecek apakah value NaN atau bukan
+            -> Number.isInteger(value), ngecek apakah value integer atau  bukan
+
+        */
+
+        const data = Number("123123")
+        console.log(Number.isInteger(data))
+        console.log(Number.isNaN(data))
+    </script>
+
+</body>
+
+</html>
