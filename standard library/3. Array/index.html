@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        {
+            /*
+                1. forEach 
+                -> melakukan perulangan
+    
+            */
+            console.log("1. ForEach")
+            const array = ["asd", "zxczc", "qwe"]
+
+            array.forEach((e, i) => console.log(`${i} : ${e}`))
+        }
+
+        {
+            /*
+            
+                2. QUEUE
+                -> data masuk akan diposisikan urutan paling belakang
+                -> sedangkan data keluar akan diposisikan dari urutan palng depan
+                -> FIFO (first in first out)
+
+                * PUSH()
+                -> Menambah data belakang
+
+                * SHIFT()
+                -> mengambil dan menghapus data paling depan
+            */
+            console.log("2. Queue -> shift dan push")
+            const queue = []
+
+            queue.push("yazid")
+            queue.push("asd")
+            queue.push("zxc")
+
+            console.log(queue)
+            queue.shift()
+            console.log(queue)
+            console.log(queue.shift())
+            console.log(queue)
+        }
+
+        {
+            /*
+                3. STACK
+                -> memasukkan dan mengambil data paling belakang atau atas
+                -> LIFO (last in first out)
+
+                * push() 
+                -> menambah belakang
+                * pop()
+                -> menghapus belakang
+            */
+            console.log("3. Stack -> pop dan push")
+            const stack = []
+
+            stack.push("yazid")
+            stack.push("asd")
+            stack.push("zxc")
+
+            console.log(stack)
+            stack.pop()
+            console.log(stack)
+            console.log(stack.pop())
+            console.log(stack)
+        }
+
+        {
+            console.log("4. Array Search")
+            /*
+                4. Array Search 
+                - find (value => boolean ) : value -> mencari data sesuai dengan kondisi
+                - findIndex(value => boolean) : number -> mencari data index sesuai dengan kondisi
+                - includes(value) : boolean -> ngecek apakah terdapat data
+                - indexOf(value) : number -> ngecek posisi index data
+                - lastIndexOf(value) : number -> ngecek posisi index data terakhir
+            */
+            const angka = [1, 2, 3, 4, 5, 1, 2, 3, 4, 5, 6, 7, 8]
+
+            console.log(angka.find(x => x > 5)) // 6
+            console.log(angka.findIndex(c => c > 1)) // 2
+            console.log(angka.includes(9)) // false
+            console.log(angka.includes(2)) // true
+            console.log(angka.indexOf(2)) // 1, karena angka 2 indexnya di 1
+            console.log(angka.lastIndexOf(5)) // 9, karena angka 5 di posisi terkahir ada di index ke 9
+        }
+
+        {
+            console.log("5. Filter")
+            /*
+                5. Filter
+                -> menciptakan array baru returnnya
+
+                filter(value => boolean) : array
+            */
+
+            const angka = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+            console.log(angka.filter(x => x > 5))
+            console.log(angka.filter(x => x % 2 === 0))
+            console.log(angka.filter(x => x % 2 === 1))
+        }
+
+        {
+            console.log("6. Array Transform")
+            /*
+                6. Array Transform
+
+                * map(value=> result) : array<result>
+                    -> transform tiap value dan menghasilkan array result
+                    -> sama kahya foreach cara kerjanya
+                
+                * reduce(resultBefore, value => result) : result
+                    -> transfrom dengan value array dan value selanjutnya, lalu hasilnya dilanjutkan ke iterasi selanjutbnya
+                    -> kiri ke kanan
+
+                * reduceRight(resultBefore, value => result) 
+                    -> sama kaya reduce(), namun dilakukan dari belakang
+                    -> kanan ke kiri
+            */
+
+            // contoh 1
+            const nama = "Muhamad Yazid Imani ".split(" ")
+            const namaUpper = nama.map(x => x.toUpperCase())
+            console.log(namaUpper)
+
+
+            const namaReduce = nama.reduce((before, value) => before + " " + value) // Muhamad Yazid Imani
+            console.log(namaReduce)
+
+            const namaReduceRight = nama.reduceRight((before, value) => before + " " + value) // Imani Yazid Muhamad
+            console.log(namaReduceRight)
+
+            // contoh 2
+            const angka = [1, 2, 3, 4, 5]
+            const total = angka.reduce((before, value) => before + value)
+            console.log(total)
+        }
+    </script>
+
+</body>
+
+</html>
