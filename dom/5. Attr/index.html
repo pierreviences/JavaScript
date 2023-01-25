@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="pier.jpg" alt="Pier Gambar" id="logo">
+
+    <img id="logo2">
+    <img id="logo3">
+    <script>
+
+        /*
+            Attr
+            -> representasi dari atr sebuah elemen,
+            -> singkatnya key-value, keynya adalah nama atribue dan value nya adalah value attribute
+
+            Attr value
+            -> untuk mendapatkan vaue secara lagnsung, bisa menggunkaan method
+            -> getAttribute(name) di element
+
+            Membuat Attr 
+            -> menggunakan document.createAttribute(name)
+            -> untuk menambahkannuya ke element, bisa gunakan element.setAtributeNode(attr)
+            -> ata bisa langsung : element.setAttribute(name, value)
+
+           
+        */
+
+        // atr
+        {
+            console.log("1.) Attr ")
+            const logo = document.getElementById("logo")
+            const src = logo.getAttributeNode("src")
+
+            console.log(src.name)
+            console.log(src.value)
+        }
+
+        // attr value
+        {
+            console.log("2.) Attr value")
+            const logo = document.getElementById("logo")
+            const src = logo.getAttribute("src")
+
+            // gak perlu pake .value
+            console.log(src)
+        }
+
+        // membuat attr
+        {
+
+            // cara 1
+            const logo2 = document.getElementById("logo2")
+            const src = document.createAttribute("src")
+            src.value = "pier.jpg"
+            logo2.setAttributeNode(src)
+
+            // cara 2
+            const logo3 = document.getElementById("logo3")
+            logo3.setAttribute("src", "pier.jpg")
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

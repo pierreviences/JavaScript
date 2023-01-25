@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <img src="pier.jpg" alt="Pier Gambar" id="logo">
+
+    <script>
+        /*
+         NamedNodeMap
+            -> kumpulan dari attr
+            -> mirip kaya nodelist, tapi isinya adalah attr
+            contoh : - attibutes -> ngambil semua atribut
+        */
+
+        console.log("1.) namedNodeMap -> melihat semua atribute ")
+        const logo = document.getElementById("logo")
+        const attributes = logo.attributes
+        console.log(attributes)
+        console.log(attributes.getNamedItem("src"))
+        for (let atribute of attributes) {
+            console.log(`${atribute.name} : ${atribute.value} `)
+        }
+
+    </script>
+
+</body>
+
+</html>
