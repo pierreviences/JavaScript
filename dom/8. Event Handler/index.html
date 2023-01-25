@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Event target</p>
+    <input type="button" value="Click Me!" id="klik">
+
+    <p>GLobal Event Handler</p>
+    <input type="button" value="Klik aja" id="klik2">
+    <script>
+        /*
+            Event Handler
+            -> Node memiliki kemampuan bereaksi terhadpa suatu kejadian, misal kejadian di klik, mouse diatas node tersebut, dll
+            -> ada banyak jenis
+            -> ada dua cara menambahkan event handler ke node
+               * event target
+               * global event handler
+
+            Event Target
+            -> parent class dari Node, semuya node memiliiki kemampuan event target
+            -> bisa meggunakan method addEventListener(type, callback) untuk menambah event handler
+
+
+            Global event handler
+            -> bukanlah sebuah super class, hanya kontrak yg bisa gunakan untuk menambah event hadnler sesuai degan type event nya
+
+            bedanya apa?
+            - kalo event target dia bisa lebih dari 1 menambahnya, tapi klo global ya cuman 1 aja
+        */
+
+
+        // event target -> bisa beberapa kali
+        const button = document.getElementById("klik")
+        button.addEventListener("click", function () {
+            button.setAttribute("value", "hahahahaah!!!")
+        })
+        button.addEventListener("click", function () {
+            console.log("asdasd")
+        })
+
+        // Global Event Handler
+        const button2 = document.getElementById("klik2")
+        button2.onclick = function () {
+            button2.setAttribute("value", "askjdhasndmqw!!!")
+        }
+    </script>
+
+</body>
+
+</html>
