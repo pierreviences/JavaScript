@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>Node</p>
+    <ul id="menu">
+        <li id="first">First</li>
+        <li id="second">Second</li>
+        <li id="third">Third</li>
+    </ul>
+
+    <br>
+    <p>Node Method</p>
+    <ul id="menu2">
+        <li id="first2">First</li>
+        <li id="second2">Second</li>
+        <li id="third2">Third</li>
+    </ul>
+    <script>
+
+        /*
+            Node
+            -> semua fitur yang dimiliki node dimiliki turunannya
+            -> NOde dalam dom bentuknya tree
+              * parent ( node diatasnya )
+              * Children ( node dibawah )
+              * slibing ( node disebelah )
+        */
+
+
+        // contoh node
+        const menu = document.getElementById("menu")
+        console.log(menu)
+
+        const second = document.getElementById("second")
+        console.log(second)
+
+        // property
+        const menuproperty = menu.childNodes
+        console.log(menuproperty)
+
+        const menuproperty2 = second.textContent
+        console.log(menuproperty2)
+        console.log(second.previousSibling.previousSibling)
+        console.log(second.nextSibling.nextSibling)
+
+
+        /*
+            Node Method
+            -> ada banyak method method
+            -> untuk manipulasi data node di dalam node tersebut. like menambah/menghapus node children
+        */
+        const menu2 = document.getElementById("menu2")
+        menu2.removeChild(document.getElementById("first2"))
+        menu2.removeChild(document.getElementById("second2"))
+    </script>
+</body>
+
+</html>
