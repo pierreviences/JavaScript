@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>1.) Node List</p>
+    <ul id="menu1">
+        <li id="satu">Satu</li>
+        <li id="dua">Dua</li>
+        <li id="tiga">Tiga</li>
+    </ul>
+
+    <p>2.) Node List Live</p>
+    <ul id="menu2">
+        <li id="satu">Satu</li>
+        <li id="dua">Dua</li>
+        <li id="tiga">Tiga</li>
+    </ul>
+
+    <p>3.) Node List Static</p>
+    <ul id="menu3">
+        <li id="satu">Satu</li>
+        <li id="dua">Dua</li>
+        <li id="tiga">Tiga</li>
+    </ul>
+
+
+    <script>
+
+        /*
+            NodeList
+            -> kumpulan dari node
+            -> digunakan ketika menyeleksi banyak node, misal ketika ingin mengambil semua children di node misalnnya
+            -> kenapa nodelist kenapa gak elementlist? karena didalam node, tidak hanya isinya elemen saja, bisa saja ada yang lainnya
+
+            * hanya melakukan iterasi saja
+
+            * ada banyak methodnya
+                ada method namanya
+            - querySelectorAll -> untuk melakukan query/mengambil/menselesi elemen ellemen yang akan diambil
+
+
+            Live vs Static NodeList
+            -> NodeList memoliki 2 tipe, yaitu Live dan Static
+            * Live -> perubahan yang terjadi pada nodelist, akan merubah semua nodelist yang sama
+            * static -> tidak akan merubah semua nodelist yang sa,ma
+
+            note : - saat kita menggunakan elemen.childNodes, nodelist bersifat live
+                   - saat kita menggunakan doucment.querySelectorAll(), nodelist bersifat static
+        */
+
+        // contoh  nodelist
+        {
+            console.log("1.) nodelist ")
+            const list = document.querySelectorAll("li")
+            console.log(list)
+
+            const list1 = document.getElementById("menu1").childNodes
+            console.log(list1)
+        }
+
+        // contoh nodelist live
+        {
+            console.log("2.) nodelist live")
+            const menu2 = document.getElementById("menu2")
+            const list = menu2.childNodes
+            menu2.appendChild(document.createElement("li")) // nambah 1 bari tapi kosong gak ada textnya 
+            // maka dia akan berubah juga, artinya dia live, perubahan di menu1 artinya akam berubah juga
+            console.log(list) // (nodelist jadi 8)
+        }
+
+        // contoh nodelist static
+        {
+            console.log("3.) nodelist static")
+            let list = document.querySelectorAll("li")
+            const menu = document.getElementById("menu3")
+            menu.appendChild(document.createElement("li"))
+            menu.appendChild(document.createElement("li"))
+            console.log(list) // node list tetap 10, kan seharusnya 12 karena udh ditambah 2 tuh
+
+            // supaya bisa nambah/berubah jadi 12, mka kita lakukan query ulang
+            list = document.querySelectorAll("li")
+            console.log(list)
+        }
+
+    </script>
+</body>
+
+</html>
