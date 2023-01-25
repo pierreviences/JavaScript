@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <div>
+        <p id="tulisan">ini adalah tulisan</p>
+    </div>
+    <script>
+        /*
+            referensi :  https://developer.mozilla.org/en-US/docs/Web/API/Document
+            
+            Document Object
+            -> akan otomatis dibuat dalam browser , tidak perlu membuat object secara document secara manual
+            * menggunkana kata kunci : document
+
+            Document Property
+            -> ada banyak property document
+            -> melihat semua data yang terdapat dalam document halaman web
+
+            Document Method
+             -> ada banyak method document
+             -> untuj manipulasi data dom
+       */
+
+        // object
+        console.log(document)
+        // property
+        console.log(document.title)
+        console.log(document.head)
+        console.log(document.images)
+
+        // method   
+        console.log(document.getElementById("tulisan"))
+
+    </script>
+
+
+
+</body>
+
+</html>
