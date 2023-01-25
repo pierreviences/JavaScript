@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <p>1.) elemene property</p>
+    <h1 id="title"></h1>
+    <p id="description"></p>
+    <div id="content" class="content">
+        <h1>zxczxzxc</h1>
+        <p>asasdasd</p>
+    </div>
+
+    <p>2.) eleemnet method</p>
+    <div id="content2" class="content2">
+        <h1 id="title2" class="title2">zxczxzxc</h1>
+        <p id="description2" class="description2">asasdasd</p>
+    </div>
+
+    <p>3.) Meambah elemen</p>
+    <div id="konten" class="konten"></div>
+
+    <script>
+        /*
+            Element
+            -> berbentuk elemen, biasnaya adalah elemtn html
+
+            Element Property
+            -> ada banyak
+
+            Element Method
+            -> karena elemen adalah turunan dari node, semua method node pun bisa digunakan di element
+        */
+
+        const title = document.getElementById("title")
+        // manipulasi element
+        title.textContent = "Belajar Javascript"
+
+        const description = document.getElementById("description")
+        // manipulasi element
+        description.textContent = "Belajar Javascript"
+
+        // property elemen buat dapetin yang ada di tag elemen html
+        const content = document.getElementById("content")
+        console.log(content.id)
+        console.log(content.className)
+        console.log(content.tagName)
+
+        // element method
+        const description2 = document.getElementById("description2")
+        const title2 = document.getElementById("title2")
+
+        console.log(title2.remove())
+
+
+        // membuat element
+        const konten = document.getElementById("konten")
+
+        // create h5
+        const a = document.createElement("h5")
+        a.textContent = "yazid imani"
+        konten.appendChild(a)
+
+        const b = document.createElement("p")
+        b.textContent = "zxczxzxzx"
+        konten.appendChild(b)
+    </script>
+
+</body>
+
+</html>
