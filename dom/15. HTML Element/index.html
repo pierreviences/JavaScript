@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <a id="link"></a>
+    <br>
+    <form name="comentform">
+        <label for="comment">
+            Comment : <input type="text" id="comment" name="comment">
+        </label>
+        <br>
+        <label for="from">
+            From : <input type="text" id="from" name="from">
+        </label>
+        <br>
+        <input type="submit" value="submit">
+    </form>
+
+    <div id="comentList"></div>
+    <br>
+    <form name="comentform2">
+        <label for="comment2">
+            Comment : <input type="text" id="comment2" name="comment2">
+        </label>
+        <br>
+        <label for="from2">
+            From : <input type="text" id="from2" name="from2">
+        </label>
+        <br>
+        <input type="submit" value="submit2">
+    </form>
+
+    <div id="comentList2"></div>
+
+    <br>
+    <table id="order" border="1">
+        <caption>order</caption>
+        <thead>
+            <tr>
+                <th>Bulan</th>
+                <th>Income</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>Januari</td>
+                <td>100</td>
+            </tr>
+
+            <tr>
+                <td>Maret</td>
+                <td>100</td>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td>Totaol</td>
+                <td>200</td>
+            </tr>
+        </tfoot>
+    </table>
+    <script>
+        /*
+            HTML ELEMENT
+            -> element murpakan representasi dari dom
+            -> html element, banyak seklai property dan method tambahan selain dari dom
+
+            HTML FORM ELEMENT
+            -> banyak fitur diluar dari elemen html
+            -> form memang lebih kompleks idbanding elemen html lainnya
+
+            AKSES FORM VIA NAME
+            -> kelebihan form itu kita bisa akses form dengan menggunakan form name
+            -> document.forms[name]
+            -> jika ingin mengakses inputnya document.forms[name][inputName]
+            -> gak perlu pake getelmentbyid
+
+            HTML TABLE ELEMENT
+        */
+
+        const link = document.getElementById("link")
+        link.href = "https://www.google.com"
+        link.target = "_blank"
+        link.textContent = "asdasdasdda"
+
+        {
+            // html form element
+            const coform = document.querySelector("form[name=comentform]")
+            coform.onsubmit = function (event) {
+                event.preventDefault() // biar ngulang
+
+                const comment = document.getElementById("comment").value
+                const commentList = document.getElementById("comentList")
+                const from = document.getElementById("from").value
+
+                const comentItem = document.createElement("p")
+                comentItem.textContent = `${comment} - ${from}`
+                commentList.appendChild(comentItem)
+
+                document.querySelector("form[name=comentform]").reset()
+            }
+        }
+
+        {
+            // akses form via name
+            document.forms['comentform2'].onsubmit = function (event) {
+                event.preventDefault() // biar ngulang
+
+
+                const commentList2 = document.getElementById("comentList2")
+                const comment2 = document.forms['comentform2']['comment2'].value
+                const from2 = document.forms['comentform2']['from2'].value
+                console.log(comment2)
+
+                const comentItem2 = document.createElement("p")
+                comentItem2.textContent = `${comment2} - ${from2}`
+                commentList2.appendChild(comentItem2)
+
+                document.forms['comentform2'].reset()
+            }
+        }
+
+        {
+            // table
+            const table = document.getElementById("order")
+            console.log(table.caption)
+            console.log(table.tHead)
+            console.log(table.tBodies)
+            console.log(table.tFoot)
+        }
+
+
+    </script>
+
+</body>
+
+</html>
