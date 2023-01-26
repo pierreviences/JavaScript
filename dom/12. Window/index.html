@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="content"></p>
+    <p id="location"></p>
+    <script>
+        /*
+            WINDOW
+            -> representasi window yang berisikan DOM document
+            -> beberapa javscript function sebenarnya berasal adri object windows,, contoh ; alert(), prompt(), confirm()
+            -> ada banyak property, method, dan event 
+            -> gak perlu menggunakna object, cukup kata kunci "window"
+        */
+
+        const content = document.getElementById("content")
+        const lokasi = document.getElementById("location")
+        const height = window.screen.height
+        const width = window.screen.width
+        const url = window.location
+        content.textContent = `Window Width : ${width}, height : ${height}`
+        lokasi.textContent = url
+    </script>
+
+</body>
+
+</html>
