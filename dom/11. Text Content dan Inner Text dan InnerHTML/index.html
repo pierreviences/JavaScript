@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p id="content">
+        <script>
+            console.log("Hello World")
+        </script>
+        <b>Yazd</b> asdasd <i>imani</i>
+    </p>
+
+    <h1>1.) textContent</h1>
+    <div id="content1"></div>
+    <h1>2.) innertext</h1>
+    <div id="content2"></div>
+    <h1>3.) innerHTML</h1>
+    <div id="content3"></div>
+    <script>
+        /*
+            InnertText
+            -> menapatkan isi text seubah element
+            
+            Tujuannya sama
+            - mengambil atau mengubah isi text konten sebuah element 
+ 
+            perbedeaan
+            - textContent akan mengembalika semua isi dari konten text sebuah elemen
+            - inner text bisa tahu, bagian text mana yang ditampilkan dan hanya akan mengambil text yang ditampikan saja
+ 
+            
+            INNER HTML
+            -> Jika textContet dan Innertext hanya mengambil ext saja,
+            -> nah kalo innerHTML akan mengambil seluruh elemen HTMLnya sebagai text
+            -> cocok jika ingin mengubah isi dari elemn  menggunakan text yang berisi tag HTML
+
+            * saat menggunakan innerHTML, kita bisa mengubah isi dari children sebuah element hanya dengan string
+            * tag yang terdapat di dalam string secara otomatis akan menjadi child element
+    
+        */
+
+        const content = document.getElementById("content")
+        console.log(content.textContent)
+        console.log(content.innerText) // lebih mantap
+        console.log(content.innerHTML)
+
+        // contoh text Content
+        {
+            const content = document.getElementById("content1")
+            content.textContent = "<h1> belajar jasasd</h1><p>selamt pagi</p>"
+        }
+
+        // contoh innerText
+        {
+            const content = document.getElementById("content2")
+            content.innerText = "<h1> belajar jasasd</h1><p>selamt pagi</p>"
+        }
+
+        // contoh innerHTML
+        {
+            const content = document.getElementById("content3")
+            content.innerHTML = "<h3> belajar jasasd</h3><p>selamt pagi</p>"
+        }
+    </script>
+</body>
+
+</html>
