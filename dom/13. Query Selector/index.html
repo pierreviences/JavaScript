@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <p>thi iasdasd</p>
+    <ul>
+        <li>satu</li>
+        <li>dua</li>
+    </ul>
+    <ul>
+        <li class="yazid">tiga</li>
+        <li id="yazid2">empat</li>
+        <li class="yazid">lima</li>
+    </ul>
+
+    <div class="yazid"></div>
+    <div class="yazidimani"></div>
+    <div class="yazidmuhamad"></div>
+    <script>
+        /*
+            Query Selector
+            -> method untuk menseleksi node sesuai dengan pola yang ingin dicari
+            -> terdapat dua metho :
+               - Document.querySelector(pola) -> menyeleksi node pertama sesuai dengan pola
+               - Document.querySelectorAll(pola) -> menyeleksi semua node dengan pola
+
+            Pola Query Selector
+            -> menggunakan css selector
+
+            Universal Selector
+            -> untuk menyelesi semua elemen
+            -> menggunakan karakter *
+
+            Type Selector
+            -> menyeleksi tag type HTML yang kita pilih
+
+            Class selector
+            -> menyeleksi semua elemtn yang memili class sesuai selector (.)
+
+            ID Seelctor
+            -> yah sama lah kaya css (#)
+            -> tapi ya isinya cuman satu aja, soalnya kan id itu unik
+
+            Atribut Selector
+            -> berdasarkan atribut 
+            -> selector[atribut]
+
+            Operator atribut Seelctor
+            -> yah sama lah kaya css [atribute=value] , [atribue^=value], dll
+        */
+
+        // universal selector
+        const elemen = document.querySelectorAll("*")
+        console.log(elemen)
+
+        // type selector
+        const list = document.querySelectorAll("li")
+        console.log(list)
+
+        // class selector
+        {
+            const list = document.querySelectorAll("li.yazid") // -> mirip css ketika mau akses class
+            console.log(list)
+        }
+
+        // id selector
+        {
+            const list = document.querySelectorAll("#yazid2") // -> mirip css ketika mau akses class
+            console.log(list)
+        }
+
+        // atribut selector
+        {
+            const list = document.querySelectorAll("[class]") // -> mirip css ketika mau akses class
+            console.log(list)
+        }
+
+        // operator atribut selector
+
+        {
+            const list = document.querySelectorAll("div[class='yazid']") // -> cuman yang yazid
+            const list2 = document.querySelectorAll("div[class^='yazid']") // -> intnya yang nama depannya yazid
+            console.log(list)
+            console.log(list2)
+        }
+    </script>
+
+</body>
+
+</html>
