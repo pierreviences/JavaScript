@@ -95,7 +95,7 @@
             // html form element
             const coform = document.querySelector("form[name=comentform]")
             coform.onsubmit = function (event) {
-                event.preventDefault() // biar ngulang
+                event.preventDefault() // biar gak ngulang (reload)
 
                 const comment = document.getElementById("comment").value
                 const commentList = document.getElementById("comentList")
@@ -112,7 +112,7 @@
         {
             // akses form via name
             document.forms['comentform2'].onsubmit = function (event) {
-                event.preventDefault() // biar ngulang
+                event.preventDefault() // biar gak ngulang (reload)
 
 
                 const commentList2 = document.getElementById("comentList2")
