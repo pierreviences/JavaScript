@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+         tagged templates
+         ketik ada string tempalte kemudian dimasukkan kedalam function
+         maka si paramter akan mempunya dua argumen
+         paremeter 1 -> menghasilkan stringnya aja dan dia akan dijadiin array yang memisahkannya adlaah sebuah variabel($)
+         paremeter 2 dan setelahnya -> nilai si variabelnya
+
+         contoh : 
+         function a(string, nama) {
+            return string -> dia akan keluar ['saya', 'imani']
+            return nama -> dia akan keluar imani
+         }
+         a`saya ${nama} imani`
+
+
+         note : bisa pake rest parameter
+        */
+        {
+            const nama = "Yazid"
+            const umur = 18
+            function coba(string, nama, umur) {
+                return string
+            }
+            const str = coba`Halo, nama saya ${nama}, saya ${umur} tahun`
+            console.log(str)
+        }
+
+        {
+            const nama = "Yazid"
+            const umur = 18
+            function coba(string, ...values) {
+                return values
+            }
+            const str = coba`Halo, nama saya ${nama}, saya ${umur} tahun`
+            console.log(str)
+        }
+
+        // cara 1 -> normal
+        {
+            const nama = "Yazid"
+            const umur = 18
+            function coba(string, ...values) {
+                let result = ''
+                string.forEach((str, i) => {
+                    result += `${str}${values[i] || ''}`
+                })
+                return result
+            }
+            const str = coba`Halo, nama saya ${nama}, saya ${umur} tahun`
+            console.log(str)
+
+        }
+
+        // cara 2 -> singkat pake reduce
+        {
+            const nama = "Yazid"
+            const umur = 18
+            function coba(string, ...values) {
+                return string.reduce((result, str, i) => `${result}${str}${values[i] || ''}`, '')
+
+            }
+            const str = coba`Halo, nama saya ${nama}, saya ${umur} tahun`
+            console.log(str)
+        }
+    </script>
+</body>
+
+</html>
