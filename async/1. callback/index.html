@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /*
+            callback
+            -> mekanisme untuk memanggil kembali kode yang ada di program dari proses async
+            -> biasanya dalam bentuk function, dan function akan dieeksekusi saat proses aysn selesai
+            -> dengan memanggil callback , program bisa menerima informasi yang dibtuhkan dari proses yang berjalan aasync
+
+            contoh method :
+            - setTimeout
+            - setInterval
+        */
+
+        function tambahElement() {
+            const header = document.createElement("h1")
+            header.textContent = "yazid"
+            document.body.appendChild(header)
+        }
+
+        setTimeout(tambahElement, 5000)
+        console.log("asdsad") // -> langsung keluar
+
+    </script>
+</body>
+
+</html>
