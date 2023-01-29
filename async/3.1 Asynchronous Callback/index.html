@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <script>
+        // asynchronous callback
+        function getDataMahasiswa(url, sukses, gagal) {
+            let ajax = new XMLHttpRequest()
+            ajax.onreadystatechange = function () {
+                if (ajax.readyState === 4) {
+                    if (ajax.status === 200) {
+                        sukses(ajax.response)
+                    } else if (ajax.status === 400) {
+                        gagal()
+                    }
+                }
+            }
+            ajax.open("get", url)
+            ajax.send()
+        }
+
+        function sukses(result) {
+            // biar jadi objek
+            const mhs = JSON.parse(result)
+            mhs.forEach(m => console.log(m.nama))
+        }
+        function gagal() {
+            console.log("gagal")
+        }
+
+        getDataMahasiswa('data.json', sukses, gagal)
+    </script>
+
+</body>
+
+</html>
