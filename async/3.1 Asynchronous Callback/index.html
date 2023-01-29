@@ -19,7 +19,7 @@
                     if (ajax.status === 200) {
                         sukses(ajax.response)
                     } else if (ajax.status === 400) {
-                        gagal()
+                        gagal(ajax.responseText)
                     }
                 }
             }
@@ -32,8 +32,8 @@
             const mhs = JSON.parse(result)
             mhs.forEach(m => console.log(m.nama))
         }
-        function gagal() {
-            console.log("gagal")
+        function gagal(response) {
+            console.log(response)
         }
 
         getDataMahasiswa('data.json', sukses, gagal)
