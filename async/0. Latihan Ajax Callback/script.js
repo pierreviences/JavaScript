@@ -52,7 +52,7 @@ function displayProducts(data) {
     data.data.products.forEach(product => s(product));
 }
 
-function s(product) {
+function getProducts(product) {
     const productLi = document.createElement("li");
     productLi.textContent = product.name;
 

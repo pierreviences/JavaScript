@@ -42,19 +42,23 @@ function displayProduct(product) {
 }
 
 function buttonClick() {
-    // promise bukan callback
+    // promise all method
     const promise = getProducts(document.getElementById("keyword").value);
-    promise
+    const promise2 = getProducts(document.getElementById("keyword2").value);
+    const promise3 = getProducts(document.getElementById("keyword3").value);
+
+    Promise.all([promise, promise2, promise3])
         .then(function (value) {
-            return value.data.products
+            return value.map((val) => val.data.products)
         })
-        .then(function (products) {
+        .then(function (value) {
             clearProducts()
-            products.forEach(function (product) {
-                displayProduct(product)
-            })
+            value.forEach(product => product.forEach(produk => displayProduct(produk)))
         })
         .catch(function (err) {
             alert(err.message)
+        })
+        .finally(function () {
+            console.log("Selesai juga")
         })
 }
