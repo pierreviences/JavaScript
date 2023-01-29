@@ -9,12 +9,24 @@
 </head>
 
 <body>
-
+    <h1 id="response"></h1>
     <script>
         /*
             AJAX CALLBACK / menerima data dari ajax
-            ->
+            -> gk bisa langsung mengambil response ajax
+            -> gunakan callback ajax
+            -> gunakan event load untuk menambahkan ajax callback
+            -> mengambil datanya gumakan property responsetext
         */
+
+        const ajax = new XMLHttpRequest()
+        ajax.open("GET", "teori.json")
+        ajax.addEventListener('load', function () {
+            const json = JSON.parse(ajax.responseText)
+            const header = document.getElementById('response')
+            header.textContent = json.response
+        })
+        ajax.send()
     </script>
 
 </body>
